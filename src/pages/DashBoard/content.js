@@ -12,6 +12,8 @@ class Content extends BaseComponent {
         super(props)
     }
 
+
+
     renderItem = (item, index) => {
         
         return (
@@ -19,8 +21,8 @@ class Content extends BaseComponent {
                 <View style={{ justifyContent: 'center', flex: 1, paddingLeft: 20 }}><Text>{item.API}</Text></View>
                 <Pressable style={{ justifyContent: 'center' }}>
                     { this.props.state.favs.includes(item.API) ?
-                        <IconButton onPress={() => { console.log(this.props.state[item.API]),this.props.removeItemFromState(item.API), Utils.removeItemFromFavourites(item.API) }} icon='heart' color={Colors.red300} size={20} /> :
-                        <IconButton onPress={() => { console.log(this.props.state[item.API]),Utils.setToFavourites(item.API), this.props.setItemState(item.API) }} icon='heart-outline' color={Colors.red300} size={20} />
+                        <IconButton onPress={() => { this.props.removeItemFromState(item.API), Utils.removeItemFromFavourites(item.API) }} icon='heart' color={Colors.red300} size={20} /> :
+                        <IconButton onPress={() => { Utils.setToFavourites(item.API), this.props.setItemState(item.API) }} icon='heart-outline' color={Colors.red300} size={20} />
                     }
                 </Pressable>
             </View>
@@ -30,7 +32,7 @@ class Content extends BaseComponent {
     render() {
         return (
 
-            this.props.state.data.length > 0 ?
+            this.props.state.data && this.props.state.data.length > 0 ?
                 <View style={{ flex: 1, marginTop: 10 }}>
                     <FlatList
                         data={this.props.state.data}
