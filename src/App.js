@@ -14,21 +14,21 @@ import Favourites from './pages/Favourites';
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
+const Root = () => {
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen name="DashBoard" component={DashBoard} />
+      <Drawer.Screen name="Favourites" component={Favourites} />
+    </Drawer.Navigator>
+  );
+}
+
 class App extends Component {
   
   render() {
 
-    const Root = () => {
-      return (
-        <Drawer.Navigator>
-          <Drawer.Screen name="DashBoard" component={DashBoard} />
-          <Drawer.Screen name="Favourites" component={Favourites} />
-        </Drawer.Navigator>
-      );
-    }
-
     return (
-      <SafeAreaProvider>
+      <SafeAreaProvider style={{backgroundColor: '#FFFFFF'}}>
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} />

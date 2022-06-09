@@ -1,13 +1,13 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Content from './content';
 
 class SplashScreen extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.splashTimer()
     }
 
@@ -18,8 +18,10 @@ class SplashScreen extends Component {
     }
 
     render() {
-        return(
-            <Content/>
+        return (
+
+            <Content />
+
         )
     }
 }

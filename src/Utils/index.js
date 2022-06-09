@@ -8,7 +8,7 @@ class Utils {
         favourites = favourites && favourites.length > 0 ? favourites : []
 
         favourites.push(value)
-        console.log(favourites)
+
         await AsyncStorage.setItem('Favourites', JSON.stringify(favourites))
     }
 

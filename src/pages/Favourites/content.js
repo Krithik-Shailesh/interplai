@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler';
 import BaseComponent from '../../components/base-component';
-import Utils from '../../Utils';
 
 class Content extends BaseComponent {
 

@@ -52,9 +52,7 @@ class DashBoard extends Component {
         this.setState({
             state,
             favs: this.state.favs.filter(data => data != item)
-        })
-       
-        
+        })   
     }
 
     render() {
